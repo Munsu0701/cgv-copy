@@ -48,6 +48,7 @@ ol, ul {
 
 li {
   display: list-item;
+  text-align: center;
 }
 
 a {
@@ -64,11 +65,16 @@ dd {
   margin-inline-start: 40px;
 }
 
+div {
+  display: block;
+}
+
 /* 헤더 부분 S */
 /* 로고 S */
 .header .contents {
   width: 980px;
   margin: 0 auto;
+  border-bottom: 1px solid #eee;
 }
 .header_content .contents {
   display: flex;
@@ -138,15 +144,21 @@ dd {
   padding: 5px 0;
   background-color: #fff;
 }
-.nav .contents {
+.nav .contents1 {
   position: relative;
+  width: 980px;
+  margin: 0 auto;
 }
-.nav_menu {
+.nav .contents1 h1 {
+  display: none;
+}
+.nav .contents1 .nav_menu {
   display: inline-flex;
 }
 .nav > li {
   width: 162px;
   padding: 20px 0;
+  display: list-item;
 }
 .nav_menu > li:first-child {
   width: 137px;
@@ -169,6 +181,9 @@ dd {
 }
 .nav_menu > li:first-child .nav_overMenu {
   padding-left: 0;
+}
+.nav_overMenu dl {
+  display: none;
 }
 .nav_overMenu dt {
   padding-top: 18px;
@@ -195,9 +210,46 @@ dd {
   color: #666;
   line-height: 2.143em;
 }
-.nav menu > li > h2 > a strong {
+.nav_menu > li > h2 > a > strong {
   font-weight: 700;
   color: #fb4357;
+}
+.nav_menu > li:nth-child(2) > h2 {
+  left: 80px;
+}
+.nav_menu > li:nth-child(3) > h2 {
+  left: 180px;
+}
+.nav_menu > li:nth-child(4) > h2 {
+  left: 240px;
+}
+.nav_menu > li:nth-child(5) > h2 {
+  left: 355px;
+}
+.nav_menu > li:nth-child(6) > h2 {
+  left: 430px;
+}
+.total_Search {
+  display: inline-flex;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  padding: 0 36px 0 10px;
+}
+.total_Search label {
+  display: block;
+}
+.total_Search .btn_search {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: -1px;
+  width: 26px;
+  height: 26px;
+  font-size: 0;
+  line-height: 0;
+  background: transparent url(/css/img/search.png) center center/26px scroll no-repeat;
+  border: 0 none;
 }
 /* 서브 메뉴 E */
 /* 헤더 부분 E */
