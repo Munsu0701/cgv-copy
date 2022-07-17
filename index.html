@@ -1,284 +1,1260 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <title>cgv copy</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="jsp/jsp.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
+
 <body>
-  <div class="wrap">
-    <!-- 헤더 부분 S -->
-    <div class="header">
-      <div class="header_content">
+  <div class="cgv_wrap">
+    <header class="wrap">
+      <!-- 헤더 부분 S -->
+      <div class="header">
+        <div class="header_content">
+          <div class="contents">
+            <!-- 로고 S -->
+            <h1 onclick>
+              <a href="/">
+                <img src="css/img/logoRed.png" alt="CGV">
+              </a>
+              <span>CULTUREPLEX</span>
+            </h1>
+            <!-- 로고 E -->
+            <!-- 헤더 옵션 S -->
+            <div class="ad-partner">
+              <a href="#">
+                <img src="css/img/ad.png" alt="광고">
+              </a>
+            </div>
+            <ul class="memberInfo_wrap">
+              <li>
+                <a href="#">
+                  <img src="css/img/login.png" alt="로그인">
+                  <span>로그인</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="css/img/loginJoin.png" alt="회원가입">
+                  <span>회원가입</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="css/img/loginMember.png" alt="MY CGV">
+                  <span>MY CGV</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="css/img/loginCustomer.png" alt="고객센터">
+                  <span>고객센터</span>
+                </a>
+              </li>
+            </ul>
+            <!-- 헤더 옵션 E -->
+          </div>
+        </div>
+        <!-- 서브 메뉴 S -->
+        <script>
+          window.addEventListener("DOMContentLoaded", function () {
+            const menu = document.getElementById("nav");
+            const subMenu = document.getElementById("nav_subMenu");
+            menu.addEventListener("mouseenter", subMenuShow);
+            // menu.addEventListener("mouseleave", subMenuNoShow);
+            // subMenu.addEventListener("mouseenter", subMenuShow);
+            subMenu.addEventListener("mouseleave", subMenuNoShow);
+          });
+
+          function subMenuShow() {
+            const subMenu = document.querySelectorAll(".nav_overMenu");
+            for(let i = 0; i < subMenu.length; i++) {
+              const mm = subMenu[i].classList;
+              mm.add("active");
+            };
+          };
+          function subMenuNoShow() {
+            const subMenu = document.querySelectorAll(".nav_overMenu");
+            for(let i = 0; i < subMenu.length; i++) {
+              const mm = subMenu[i].classList;
+              mm.remove("active");
+            };
+          };
+        </script>
+        <div class="nav" id="nav">
+          <div class="contents">
+            <ul class="nav_menu" id="navmenu">
+              <li>
+                <h2>
+                  <a href="#">영화</a>
+                </h2>
+              </li>
+              <li>
+                <h2>
+                  <a href="#">극장</a>
+                </h2>
+              </li>
+              <li>
+                <h2>
+                  <a href="#">
+                    <strong>예매</strong>
+                  </a>
+                </h2>
+              </li>
+              <li>
+                <h2>
+                  <a href="#">
+                    스토어
+                  </a>
+                </h2>
+              </li>
+              <li>
+                <h2>
+                  <a href="#">
+                    이벤트
+                  </a>
+                </h2>
+              </li>
+              <li>
+                <h2>
+                  <a href="#">
+                    혜택
+                  </a>
+                </h2>
+              </li>
+            </ul>
+            <div class="total_Search">
+              <label for="totalSerach">
+                <input type="text" value>
+              </label>
+              <button type="button" class="btn_search">검색</button>
+            </div>
+          </div>
+          <div class="nav_subMenu" id="nav_subMenu">
+            <dl class="nav_overMenu" id="navoverMenu">
+              <dt>
+                <h2>
+                  <a href="#" tabindex="-1">영화</a>
+                </h2>
+              </dt>
+              <dd>
+                <h3>
+                  <a href="#">무비차트</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">아트하우스</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">ICECON</a>
+                </h3>
+              </dd>
+            </dl>
+            <dl class="nav_overMenu" id="navoverMenu">
+              <dt>
+                <h2>
+                  <a href="#" tabindex="-1">극장</a>
+                </h2>
+              </dt>
+              <dd>
+                <h3>
+                  <a href="#">CGV 극장</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">특별관</a>
+                </h3>
+              </dd>
+            </dl>
+            <dl class="nav_overMenu" id="navoverMenu">
+              <dt>
+                <h2>
+                  <a href="#" tabindex="-1">예매</a>
+                </h2>
+              </dt>
+              <dd>
+                <h3>
+                  <a href="#">빠른예매</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">상영스케줄</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">English Ticketing</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">English Schedule</a>
+                </h3>
+              </dd>
+            </dl>
+            <dl class="nav_overMenu" id="navoverMenu">
+              <dt>
+                <h2>
+                  <a href="#" tabindex="-1">스토어</a>
+                </h2>
+              </dt>
+              <dd>
+                <h3>
+                  <a href="#">영화관람권</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">기프트카드</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">콤보</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">팝콘</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">음료</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">스낵</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">플레이존</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#" class="arrowR" target="_blank">씨네샵 ></a>
+                </h3>
+              </dd>
+            </dl>
+            <dl class="nav_overMenu" id="navoverMenu">
+              <dt>
+                <h2>
+                  <a href="#" tabindex="-1">이벤트</a>
+                </h2>
+              </dt>
+              <dd>
+                <h3>
+                  <a href="#">SPECIAL</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">영화/예매</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">멤버십/CLUB</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">CGV 극장별</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">제휴할인</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">당첨자 발표</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">종료된 이벤트</a>
+                </h3>
+              </dd>
+            </dl>
+            <dl class="nav_overMenu" id="navoverMenu">
+              <dt>
+                <h2>
+                  <a href="#" tabindex="-1">혜택</a>
+                </h2>
+              </dt>
+              <dd>
+                <h3>
+                  <a href="#">CGV 할인정보</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">CLUB 서비스</a>
+                </h3>
+              </dd>
+              <dd>
+                <h3>
+                  <a href="#">VIP 라운지</a>
+                </h3>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <!-- 서브 메뉴 E -->
+      </div>
+      <!-- 헤더 부분 E -->
+    </header>
+    <!-- 메인 S -->
+    <main>
+      <!-- 메인 비디오 S -->
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          const start = document.getElementById("start");
+          start.addEventListener("click", startF);
+
+          const mute = document.getElementById("mute");
+          mute.addEventListener("click", muteF);
+        });
+
+        function startF() {
+          const pause = document.getElementById("start");
+          const clName = pause.classList;
+          const videoEl = document.getElementById("videoSet");
+          if(clName.length == 2) {
+            clName.remove("active");
+            videoEl.play();
+          } else {
+            clName.add("active");
+            videoEl.pause();
+          }
+        }
+
+        function muteF() {
+          const sound = document.getElementById("mute");
+          const clName = sound.classList;
+          const videoEl = document.getElementById("videoSet");
+          if(clName.length == 2) {
+            clName.remove("active");
+            videoEl.muted = true;
+          } else {
+            clName.add("active");
+            videoEl.muted = false;
+          }
+        }
+
+      </script>
+      <div class="video_wrap">
+        <div class="ma_video">
+          <video autoplay muted id="videoSet">
+            <source src="https://adimg.cgv.co.kr/images/202206/elvis/0713_elvis_1080x608_30.mp4" type="video/mp4">
+          </video>
+          <strong class="video_title">엘비스</strong>
+          <span class="video_subTitle">
+            시대를 뒤흔든 아이콘
+            <br>
+            절찬상영중
+          </span>
+          <div class="video_sub">
+            <a href="#" class="viewDetail">상세보기</a>
+            <a href="#none" class="start" id="start">
+            </a>
+            <a href="#none" class="mute" id="mute">
+            </a>
+          </div>
+        </div>
+        <!-- 메인 비디오 E -->
+      </div>
+      <!-- 무비 차트 S -->
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          const chart = document.getElementById("chart");
+          const screen = document.getElementById("screen");
+
+          chart.addEventListener("click", chartF);
+          screen.addEventListener("click", screenF);
+
+        });
+
+        function chartF() {
+          const chart = document.getElementById("chart");
+          const screen = document.getElementById("screen");
+
+          const classLi1 = chart.classList;
+          const classLi2 = screen.classList;
+
+          classLi1.add("active");
+          classLi2.remove("active");
+
+          const viewChart = document.getElementById("viewChart");
+          const viewScreen = document.getElementById("viewScreen");
+
+          const vClassLi1 = viewChart.classList;
+          const vClassLi2 = viewScreen.classList;
+
+          vClassLi1.remove("active");
+          vClassLi2.remove("active");
+
+        }
+
+        function screenF() {
+          const chart = document.getElementById("chart");
+          const screen = document.getElementById("screen");
+
+          const classLi1 = chart.classList;
+          const classLi2 = screen.classList;
+
+          classLi1.remove("active");
+          classLi2.add("active");
+
+          const viewChart = document.getElementById("viewChart");
+          const viewScreen = document.getElementById("viewScreen");
+
+          const vClassLi1 = viewChart.classList;
+          const vClassLi2 = viewScreen.classList;
+
+          vClassLi1.add("active");
+          vClassLi2.add("active");
+
+        }
+      </script>
+      <div class="movie_chartwrap">
         <div class="contents">
-          <!-- 로고 S -->
-          <h1 onclick>
-            <a href="/">
-              <img src="css/img/logoRed.png" alt="CGV">
-            </a>
-            <span>CULTUREPLEX</span>
-          </h1>
-          <!-- 로고 E -->
-          <!-- 헤더 옵션 S -->
-          <div class="ad-partner">
-            <a href="#">
-              <img src="css/img/ad.png" alt="광고">
-            </a>
+          <div class="screen_wrap">
+            <div class="btn_wrap">
+              <h3>
+                <a href="#none" class="active" id="chart">무비차트</a>
+              </h3>
+              <h3>
+                <a href="#none" id="screen">상영예정작</a>
+              </h3>
+            </div>
+            <a href="#" class="allView">전체보기</a>
           </div>
-          <ul class="memberInfo_wrap">
-            <li>
-              <a href="#">
-                <img src="css/img/login.png" alt="로그인">
-                <span>로그인</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="css/img/loginJoin.png" alt="회원가입">
-                <span>회원가입</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="css/img/loginMember.png" alt="MY CGV">
-                <span>MY CGV</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="css/img/loginCustomer.png" alt="고객센터">
-                <span>고객센터</span>
-              </a>
-            </li>
-          </ul>
-          <!-- 헤더 옵션 E -->
+          <div id="viewChart">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/1.jpg" alt="탑건-매버릭">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">탑건-매버릭</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      99%
+                    </span>
+                    <span>
+                      예매율 27.0%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/2.jpg" alt="외계+인 1부">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">외계+인 1부</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 19.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/3.jpg" alt="토르-러브 앤 썬더">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">토르-러브 앤 썬더</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggood.png" alt="Golden Egg good">
+                      80%
+                    </span>
+                    <span>
+                      예매율 14.8%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/4.jpg" alt="미니언즈2">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">미니언즈2</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 12.6%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/5.jpg" alt="헤어질 결심">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">헤어질 결심</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      93%
+                    </span>
+                    <span>
+                      예매율 7.5%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/6.jpg" alt="명탐정 코난-할로윈의 신부">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">명탐정 코난-할로윈의 신부</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      97%
+                    </span>
+                    <span>
+                      예매율 5.4%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/7.jpg" alt="한산-용의 출현">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">한산-용의 출현</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 4.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/8.jpg" alt="엘비스">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">엘비스</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      95%
+                    </span>
+                    <span>
+                      예매율 1.5%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/9.jpg" alt="뒤틀린 집">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">뒤틀린 집</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegg.png" alt="Golden Egg">
+                      55%
+                    </span>
+                    <span>
+                      예매율 1.4%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/10.jpg" alt="그레이 맨">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">그레이 맨</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      95%
+                    </span>
+                    <span>
+                      예매율 1.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/11.jpg" alt="더 킬러-죽어도 되는 아이">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">더 킬러-죽어도 되는 아이</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      85%
+                    </span>
+                    <span>
+                      예매율 1.1%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/12.jpg" alt="범죄도시2">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">범죄도시2</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      98%
+                    </span>
+                    <span>
+                      예매율 0.6%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/13.jpg" alt="로스트 도터">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">로스트 도터</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      93%
+                    </span>
+                    <span>
+                      예매율 0.4%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/14.jpg" alt="멘">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">멘</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggood.png" alt="Golden Egg good">
+                      73%
+                    </span>
+                    <span>
+                      예매율 0.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/15.jpg" alt="노스맨">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">노스맨</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/16.jpg" alt="비욘드 라이브 더 무비 : 샤이니 월드">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">비욘드 라이브 더 무비 : 샤이니 월드</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/17.jpg" alt="뽀로로 극장판 드래곤캐슬 대모험">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">뽀로로 극장판 드래곤캐슬 대모험</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.2%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/18.jpg" alt="큐어">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">큐어</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      92%
+                    </span>
+                    <span>
+                      예매율 0.2%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/19.jpg" alt="썸머 필름을 타고!">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">썸머 필름을 타고!</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.2%
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+          </div>
+          <div id="viewScreen">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/!1.jpg" alt="탑건-매버릭">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">탑건-매버릭</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      99%
+                    </span>
+                    <span>
+                      예매율 27.0%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/2.jpg" alt="외계+인 1부">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">외계+인 1부</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 19.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/3.jpg" alt="토르-러브 앤 썬더">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">토르-러브 앤 썬더</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggood.png" alt="Golden Egg good">
+                      80%
+                    </span>
+                    <span>
+                      예매율 14.8%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/4.jpg" alt="미니언즈2">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">미니언즈2</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 12.6%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/5.jpg" alt="헤어질 결심">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">헤어질 결심</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      93%
+                    </span>
+                    <span>
+                      예매율 7.5%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/6.jpg" alt="명탐정 코난-할로윈의 신부">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">명탐정 코난-할로윈의 신부</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      97%
+                    </span>
+                    <span>
+                      예매율 5.4%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/7.jpg" alt="한산-용의 출현">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="4DX">
+                    </i>
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">한산-용의 출현</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 4.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/8.jpg" alt="엘비스">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이용가">
+                  </div>
+                  <div class="screenType_wrap">
+                    <i class="screenType">
+                      <img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx">
+                    </i>
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">엘비스</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      95%
+                    </span>
+                    <span>
+                      예매율 1.5%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/9.jpg" alt="뒤틀린 집">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">뒤틀린 집</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegg.png" alt="Golden Egg">
+                      55%
+                    </span>
+                    <span>
+                      예매율 1.4%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/10.jpg" alt="그레이 맨">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">그레이 맨</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      95%
+                    </span>
+                    <span>
+                      예매율 1.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/11.jpg" alt="더 킬러-죽어도 되는 아이">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">더 킬러-죽어도 되는 아이</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      85%
+                    </span>
+                    <span>
+                      예매율 1.1%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/12.jpg" alt="범죄도시2">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">범죄도시2</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      98%
+                    </span>
+                    <span>
+                      예매율 0.6%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/13.jpg" alt="로스트 도터">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">로스트 도터</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      93%
+                    </span>
+                    <span>
+                      예매율 0.4%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/14.jpg" alt="멘">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">멘</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggood.png" alt="Golden Egg good">
+                      73%
+                    </span>
+                    <span>
+                      예매율 0.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/15.jpg" alt="노스맨">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">노스맨</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/16.jpg" alt="비욘드 라이브 더 무비 : 샤이니 월드">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">비욘드 라이브 더 무비 : 샤이니 월드</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.3%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/17.jpg" alt="뽀로로 극장판 드래곤캐슬 대모험">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">뽀로로 극장판 드래곤캐슬 대모험</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.2%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/18.jpg" alt="큐어">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">큐어</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">
+                      92%
+                    </span>
+                    <span>
+                      예매율 0.2%
+                    </span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="image-wrap">
+                    <img src="css/img/19.jpg" alt="썸머 필름을 타고!">
+                  </div>
+                  <div class="ageLimit">
+                    <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체 이용가">
+                  </div>
+                  <div class="movie_info_wrap">
+                    <strong class="movieName">썸머 필름을 타고!</strong>
+                    <span>
+                      <img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">
+                      99%
+                    </span>
+                    <span>
+                      예매율 0.2%
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+          </div>
+          <script>
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 5,
+              spaceBetween: 30,
+              slidesPerGroup: 5,
+              loop: false,
+              loopFillGroupWithBlank: true,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+          </script>
         </div>
       </div>
-      <!-- 서브 메뉴 S -->
-      <div class="nav">
-        <div class="contents1">
-          <ul class="nav_menu">
-            <li>
-              <h2>
-                <a href="#">영화</a>
-              </h2>
-              <dl class="nav_overMenu">
-                <dt>
-                  <h2>
-                    <a href="#" tabindex="-1">영화</a>
-                  </h2>
-                </dt>
-                <dd>
-                  <h3>
-                    <a href="#">무비차트</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">아트하우스</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">ICECON</a>
-                  </h3>
-                </dd>
-              </dl>
-            </li>
-            <li>
-              <h2>
-                <a href="#">극장</a>
-              </h2>
-              <dl class="nav_overMenu">
-                <dt>
-                  <h2>
-                    <a href="#" tabindex="-1">극장</a>
-                  </h2>
-                </dt>
-                <dd>
-                  <h3>
-                    <a href="#">CGV 극장</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">특별관</a>
-                  </h3>
-                </dd>
-            </li>
-            <li>
-              <h2>
-                <a href="#">
-                  <strong>예매</strong>
-                </a>
-              </h2>
-              <dl class="nav_overMenu">
-                <dt>
-                  <h2>
-                    <a href="#" tabindex="-1">예매</a>
-                  </h2>
-                </dt>
-                <dd>
-                  <h3>
-                    <a href="#">빠른예매</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">상영스케줄</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">English Ticketing</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">English Schedule</a>
-                  </h3>
-                </dd>
-            </li>
-            <li>
-              <h2>
-                <a href="#">
-                  스토어
-                </a>
-              </h2>
-              <dl class="nav_overMenu">
-                <dt>
-                  <h2>
-                    <a href="#" tabindex="-1">스토어</a>
-                  </h2>
-                </dt>
-                <dd>
-                  <h3>
-                    <a href="#">영화관람권</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">기프트카드</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">콤보</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">팝콘</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">음료</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">스낵</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">플레이존</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#" class="arrowR" target="_blank">씨네샵 ></a>
-                  </h3>
-                </dd>
-            </li>
-            <li>
-              <h2>
-                <a href="#">
-                  이벤트
-                </a>
-              </h2>
-              <dl class="nav_overMenu">
-                <dt>
-                  <h2>
-                    <a href="#" tabindex="-1">이벤트</a>
-                  </h2>
-                </dt>
-                <dd>
-                  <h3>
-                    <a href="#">SPECIAL</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">영화/예매</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">멤버십/CLUB</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">CGV 극장별</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">제휴할인</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">당첨자 발표</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">종료된 이벤트</a>
-                  </h3>
-                </dd>
-            </li>
-            <li>
-              <h2>
-                <a href="#">
-                  혜택
-                </a>
-              </h2>
-              <dl class="nav_overMenu">
-                <dt>
-                  <h2>
-                    <a href="#" tabindex="-1">혜택</a>
-                  </h2>
-                </dt>
-                <dd>
-                  <h3>
-                    <a href="#">CGV 할인정보</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">CLUB 서비스</a>
-                  </h3>
-                </dd>
-                <dd>
-                  <h3>
-                    <a href="#">VIP 라운지</a>
-                  </h3>
-                </dd>
-            </li>
-          </ul>
-          <div class="total_Search">
-            <label for="totalSerach">
-              <input type="text" value>
-            </label>
-            <button type="button" class="btn_search">검색</button>
-          </div>
-        </div>
-      </div>
-      <!-- 서브 메뉴 E -->
-    </div>
-    <!-- 헤더 부분 E -->
+      <!-- 무비 차트 E -->
+    </main>
+    <!-- 메인 E -->
   </div>
 </body>
+
 </html>

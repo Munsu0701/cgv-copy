@@ -5,6 +5,7 @@ body {
   color: #666;
   font-family: 'Noto Sans KR', '맑은 고딕', '돋음', sans-serif;
   font-weight: 400;
+  counter-reset: movie-chart-counter;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -67,6 +68,17 @@ dd {
 
 div {
   display: block;
+}
+
+dl::after, ul::after, ol::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.cgv_wrap {
+  position: relative;
+  width: 100%;
 }
 
 /* 헤더 부분 S */
@@ -144,16 +156,39 @@ div {
   padding: 5px 0;
   background-color: #fff;
 }
-.nav .contents1 {
+.nav::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #a58e8e;
+}
+.nav::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  width: 100%;
+  height: 1px;
+  background-color: #fb4357;
+}
+.nav .contents {
   position: relative;
   width: 980px;
   margin: 0 auto;
 }
-.nav .contents1 h1 {
-  display: none;
+.nav .contents {
+  border: none;
+  background-color: #fff;
 }
-.nav .contents1 .nav_menu {
+.nav .contents .nav_menu {
   display: inline-flex;
+  width: 100%;
 }
 .nav > li {
   width: 162px;
@@ -174,16 +209,21 @@ div {
   line-height: 1.500em;
 }
 .nav_overMenu {
-  display: none;
   position: relative;
   margin-bottom: 8px;
   padding: 25px 0 0 25px;
+  display: none;
+  background-color: #fff;
+  height: 100%;
 }
+.nav_subMenu .active {
+  display: block;
+}
+/* .nav_menu:hover .nav_overMenu {
+  display: block;
+} */
 .nav_menu > li:first-child .nav_overMenu {
   padding-left: 0;
-}
-.nav_overMenu dl {
-  display: none;
 }
 .nav_overMenu dt {
   padding-top: 18px;
@@ -204,7 +244,7 @@ div {
   text-align: left;
   background-image: none;
 }
-.nav_overMenu dd a {
+.nav_subMenu dd a {
   font-weight: 400;
   font-size: 14px;
   color: #666;
@@ -213,6 +253,9 @@ div {
 .nav_menu > li > h2 > a > strong {
   font-weight: 700;
   color: #fb4357;
+}
+.nav_menu > li:nth-child(1) > h2 {
+  left: 1px;
 }
 .nav_menu > li:nth-child(2) > h2 {
   left: 80px;
@@ -251,5 +294,288 @@ div {
   background: transparent url(/css/img/search.png) center center/26px scroll no-repeat;
   border: 0 none;
 }
+.nav_subMenu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  background-color: #fff;
+  margin-top: 15px;
+  z-index: 1;
+}
 /* 서브 메뉴 E */
 /* 헤더 부분 E */
+
+/* 메인 S */
+main {
+  position: relative;
+  width: 100%;
+}
+/* 메인 비디오 S */
+.video_wrap {
+  position: relative;
+  width: 100%;
+  height: 498px;
+  background-color: #000;
+}
+.video_wrap .ma_video {
+  overflow: hidden;
+  position: relative;
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.video_wrap .ma_video::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.25) 75%, #000 100%);
+}
+.video_wrap .ma_video .ma_video video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.35);
+}
+.video_wrap .ma_video .video_title {
+  position: absolute;
+  top: 170px;
+  left: 0;
+  font-weight: 700;
+  font-size: 40px;
+  color: #fff;
+}
+.video_wrap .ma_video .video_subTitle {
+  overflow: hidden;
+  position: absolute;
+  top: 239px;
+  left: 0;
+  color: #fff;
+  font-size: 20px;
+  max-width: 100%;
+  line-height: 30px;
+}
+.video_wrap .ma_video .video_sub {
+  display: inline-flex;
+  position: absolute;
+  top: 315px;
+  left: 3px;
+}
+.video_wrap .ma_video .video_sub .viewDetail {
+  display: block;
+  padding: 5px 30px 5px 18px;
+  font-size: 14px;
+  color: #343434;
+  background: rgba(255, 255, 255, 0.8) url(img/detail.png) calc(100% - 11px) center/8px 13px scroll no-repeat;
+  border-radius: 15px;
+}
+.video_wrap .ma_video .video_sub .start {
+  display: block;
+  margin-left: 10px;
+  width: 28px;
+  height: 28px;
+  background: url(img/play.png) center/18px scroll no-repeat;
+  border: 1px solid #979797;
+  border-radius: 50%;
+}
+.video_wrap .ma_video .video_sub .mute {
+  display: block;
+  margin-left: 10px;
+  width: 28px;
+  height: 28px;
+  background: url(img/soundOff.png) center/18px scroll no-repeat;
+  border: 1px solid #979797;
+  border-radius: 50%;
+}
+.video_wrap .ma_video .video_sub .start.active {
+  background: url(img/pause.png) center/18px scroll no-repeat;
+}
+.video_wrap .ma_video .video_sub .mute.active {
+  background: url(img/soundOn.png) center/18px scroll no-repeat;
+}
+/* 메인 비디오 E */
+/* 무비 차트 S */
+.movie_chartwrap {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
+}
+.movie_chartwrap .contents {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 50px 30px 60px;
+}
+.movie_chartwrap .contents .screen_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.movie_chartwrap .contents .screen_wrap .btn_wrap {
+  display: inline-flex;
+}
+.movie_chartwrap .contents .screen_wrap .btn_wrap h3 {
+  height: auto;
+  margin: 0;
+  line-height: 5px;
+  background-image: none;
+}
+.movie_chartwrap .contents .screen_wrap .btn_wrap h3 a {
+  font-weight: 400;
+  color: #666;
+  font-size: 26px;
+}
+.movie_chartwrap .contents .screen_wrap .btn_wrap h3 a.active {
+  font-weight: 700;
+  color: #222;
+}
+.movie_chartwrap .contents .screen_wrap .btn_wrap h3 ~ h3 {
+  position: relative;
+  margin-left: 32px;
+}
+.movie_chartwrap .contents .screen_wrap .btn_wrap h3 ~ h3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  width: 1px;
+  height: 14px;
+  margin-top: -7px;
+  background-color: #d8d8d8;
+}
+.movie_chartwrap .contents .screen_wrap .allView {
+  padding: 4px 32px 4px 15px;
+  font-size: 14px;
+  color: #222;
+  background: transparent url(img/detail.png) calc(100% - 7px) center/8px 13px scroll no-repeat;
+  border: 1px solid #e2e2e2;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px 0 rgb(0, 0, 0 / 5%);
+}
+.image-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 170px;
+  height: 234px;
+  border-radius: 10px;
+}
+.image-wrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.09) 35%, rgba(0, 0, 0, 0.85));
+}
+.image-wrap > image {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(0, -50%);
+}
+.ageLimit {
+  position: absolute;
+  right: 6px;
+  top: 7px;
+}
+.ageLimit img {
+  width: 22px;
+  height: 22px;
+}
+.screenType_wrap {
+  position: absolute;
+  right: 10px;
+  bottom: 70px;
+}
+.screenType_wrap .screenType {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 34px;
+  height: 10px;
+  border: 1px solid rgba(223, 223, 223, 0.5);
+  border-radius: 3px;
+}
+.screenType_wrap .screenType img {
+  width: 35px;
+  height: 7px;
+}
+.image-wrap::after {
+  content: counter(movie-chart-counter);
+  counter-increment: movie-chart-counter;
+  position: absolute;
+  left: 9px;
+  bottom: -4px;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 2px 5px 5px rgb(0, 0, 0 / 45%);
+}
+.movie_info_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.movie_info_wrap .movieName {
+  display: block;
+  flex-basis: 100%;
+  overflow: hidden;
+  margin-top: 14px;
+  font-size: 18px;
+  color: #222;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.movie_info_wrap > span {
+  display: block;
+  float: left;
+  margin-top: 9px;
+  font-size: 14px;
+  color: #444;
+}
+.movie_info_wrap > span img {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+}
+.movie_info_wrap > span ~ span {
+  position: relative;
+  padding-left: 16px;
+}
+.movie_info_wrap > span ~ span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 1px;
+  height: 10px;
+  margin-top: -5px;
+  background-color: #ededed;
+}
+#viewChart {
+  display: block;
+}
+#viewScreen {
+  display: none;
+}
+#viewChart.active {
+  display: none;
+}
+#viewScreen.active {
+  display: block;
+}
+/* 무비 차트 E */
+/* 메인 E */
