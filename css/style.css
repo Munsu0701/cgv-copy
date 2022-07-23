@@ -475,6 +475,13 @@ main {
   height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.09) 35%, rgba(0, 0, 0, 0.85));
 }
+.image-wrap:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: none;
+}
+.image-wrap:hover::after {
+  opacity: 0;
+}
 .image-wrap > image {
   position: absolute;
   left: 0;
@@ -496,7 +503,7 @@ main {
 .screenType_wrap {
   position: absolute;
   right: 10px;
-  bottom: 70px;
+  bottom: 10px;
 }
 .screenType_wrap .screenType {
   display: flex;
@@ -577,5 +584,126 @@ main {
 #viewScreen.active {
   display: block;
 }
+.image-wrap:hover {
+  box-shadow: 6px 10px 20px 0 rgb(0, 0, 0 / 40%);
+}
+.image-wrap .movie_chart_btnwrap {
+  display: none;
+
+}
+.image-wrap:hover .movie_chart_btnwrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.image-wrap:hover .movie_chart_btnwrap a.chart_btn_ticket{
+  color: #fff;
+  background-color: #fb4357;
+}
+.image-wrap:hover .movie_chart_btnwrap a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 34px;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 4px;
+}
+.image-wrap:hover .movie_chart_btnwrap a ~ a {
+  margin-top: 6px;
+}
+.image-wrap:hover .movie_chart_btnwrap a.chart_btn_detail {
+  color: #666;
+  background-color: #fff;
+}
+.image-wrap:hover .ageLimit {
+  display: none;
+}
+.image-wrap:hover .screenType_wrap {
+  display: none;
+}
+.image-wrap:hover .movie_chart_btnwrap a:hover {
+  opacity: 0.8;
+}
+.image-wrap .ageLimit .dDay_wrap {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-top: 5px;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.image-wrap .ageLimit .dDay_wrap span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: 10px;
+  color: #fb4357;
+  transform: scale(0.9);
+}
+.image-wrap .ageLimit .dDay_wrap span::before {
+  content: 'D-'
+}
 /* 무비 차트 E */
+/* 이벤트 S */
+.event_warp {
+  padding: 60px 0 6px;
+}
+.event_warp .event_contents {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+}
+.event_warp .event_contents .event_title_wrap {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.event_warp .event_contents .event_title_wrap h3 {
+  float: left;
+  height: auto;
+  margin: 0;
+  font-weight: 700;
+  font-size: 26px;
+  color: #222;
+  background-image: none;
+}
+.event_warp .event_contents .event_title_wrap .btn_allView {
+  float: right;
+  margin-top: 4px;
+  padding: 4px 32px 4px 15px;
+  font-size: 14px;
+  color: #222;
+  background: transparent url(img/arrowR.png) calc(100% - 7px) center/8px 13px scroll no-repeat;
+  border: 1px solid #e2e2e2;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 5%);
+}
+.event_warp .event_contents .event_title_wrap .play_stop {
+  display: block;
+  position: absolute;
+  right: 106px;
+  top: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 0;
+  border: 1px solid #e3e3e3;
+  border-radius: 50%;
+  background: transparent url(img/start.png) 10px center/11px 15px scroll no-repeat;
+}
+.event_warp .event_contents .event_title_wrap .play_stop.active {
+  background: transparent url(img/stop.png) center center/9px 13px scroll no-repeat;
+}
+/* 이벤트 E */
 /* 메인 E */
