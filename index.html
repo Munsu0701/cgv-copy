@@ -11,7 +11,6 @@
 
 <body>
   <div class="cgv_wrap">
-    <header class="wrap">
       <!-- 헤더 부분 S -->
       <div class="header">
         <div class="header_content">
@@ -63,40 +62,94 @@
         <script>
           window.addEventListener("DOMContentLoaded", function () {
             const menu = document.getElementById("nav");
-            const subMenu = document.getElementById("nav_subMenu");
+            const subMenu = document.getElementById("navmenu");
             menu.addEventListener("mouseenter", subMenuShow);
             // menu.addEventListener("mouseleave", subMenuNoShow);
             // subMenu.addEventListener("mouseenter", subMenuShow);
             subMenu.addEventListener("mouseleave", subMenuNoShow);
+
+            document.addEventListener("scroll", menu_fixed);
           });
 
           function subMenuShow() {
             const subMenu = document.querySelectorAll(".nav_overMenu");
             for(let i = 0; i < subMenu.length; i++) {
-              const mm = subMenu[i].classList;
-              mm.add("active");
+              subMenu[i].classList.add("active");
             };
           };
           function subMenuNoShow() {
             const subMenu = document.querySelectorAll(".nav_overMenu");
             for(let i = 0; i < subMenu.length; i++) {
-              const mm = subMenu[i].classList;
-              mm.remove("active");
+              subMenu[i].classList.remove("active");
             };
           };
+          function menu_fixed() {
+            const menu = document.getElementById("nav");
+            const top_menu = menu.getBoundingClientRect();
+            if(window.pageYOffset > top_menu.bottom) {
+              menu.classList.add("fixed");
+            } else {
+              menu.classList.remove("fixed");
+            }
+
+          }
         </script>
         <div class="nav" id="nav">
           <div class="contents">
+            <h1>
+              <a href="/" tabindex="-1">
+                <img src="https://img.cgv.co.kr/R2014/images/common/logo/logoWhite.png" alt="CGV">
+              </a>
+            </h1>
             <ul class="nav_menu" id="navmenu">
               <li>
                 <h2>
                   <a href="#">영화</a>
                 </h2>
+                <dl class="nav_overMenu" id="navoverMenu">
+                  <dt>
+                    <h2>
+                      <a href="#" tabindex="-1">영화</a>
+                    </h2>
+                  </dt>
+                  <dd>
+                    <h3>
+                      <a href="#">무비차트</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">아트하우스</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">ICECON</a>
+                    </h3>
+                  </dd>
+                </dl>
               </li>
               <li>
                 <h2>
                   <a href="#">극장</a>
                 </h2>
+                <dl class="nav_overMenu" id="navoverMenu">
+                  <dt>
+                    <h2>
+                      <a href="#" tabindex="-1">극장</a>
+                    </h2>
+                  </dt>
+                  <dd>
+                    <h3>
+                      <a href="#">CGV 극장</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">특별관</a>
+                    </h3>
+                  </dd>
+                </dl>
               </li>
               <li>
                 <h2>
@@ -104,6 +157,33 @@
                     <strong>예매</strong>
                   </a>
                 </h2>
+                <dl class="nav_overMenu" id="navoverMenu">
+                  <dt>
+                    <h2>
+                      <a href="#" tabindex="-1">예매</a>
+                    </h2>
+                  </dt>
+                  <dd>
+                    <h3>
+                      <a href="#">빠른예매</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">상영스케줄</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">English Ticketing</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">English Schedule</a>
+                    </h3>
+                  </dd>
+                </dl>
               </li>
               <li>
                 <h2>
@@ -111,6 +191,53 @@
                     스토어
                   </a>
                 </h2>
+                <dl class="nav_overMenu" id="navoverMenu">
+                  <dt>
+                    <h2>
+                      <a href="#" tabindex="-1">스토어</a>
+                    </h2>
+                  </dt>
+                  <dd>
+                    <h3>
+                      <a href="#">영화관람권</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">기프트카드</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">콤보</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">팝콘</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">음료</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">스낵</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">플레이존</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#" class="arrowR" target="_blank">씨네샵 ></a>
+                    </h3>
+                  </dd>
+                </dl>
               </li>
               <li>
                 <h2>
@@ -118,6 +245,48 @@
                     이벤트
                   </a>
                 </h2>
+                <dl class="nav_overMenu" id="navoverMenu">
+                  <dt>
+                    <h2>
+                      <a href="#" tabindex="-1">이벤트</a>
+                    </h2>
+                  </dt>
+                  <dd>
+                    <h3>
+                      <a href="#">SPECIAL</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">영화/예매</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">멤버십/CLUB</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">CGV 극장별</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">제휴할인</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">당첨자 발표</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">종료된 이벤트</a>
+                    </h3>
+                  </dd>
+                </dl>
               </li>
               <li>
                 <h2>
@@ -125,6 +294,28 @@
                     혜택
                   </a>
                 </h2>
+                <dl class="nav_overMenu" id="navoverMenu">
+                  <dt>
+                    <h2>
+                      <a href="#" tabindex="-1">혜택</a>
+                    </h2>
+                  </dt>
+                  <dd>
+                    <h3>
+                      <a href="#">CGV 할인정보</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">CLUB 서비스</a>
+                    </h3>
+                  </dd>
+                  <dd>
+                    <h3>
+                      <a href="#">VIP 라운지</a>
+                    </h3>
+                  </dd>
+                </dl>
               </li>
             </ul>
             <div class="total_Search">
@@ -134,192 +325,12 @@
               <button type="button" class="btn_search">검색</button>
             </div>
           </div>
-          <div class="nav_subMenu" id="nav_subMenu">
-            <dl class="nav_overMenu" id="navoverMenu">
-              <dt>
-                <h2>
-                  <a href="#" tabindex="-1">영화</a>
-                </h2>
-              </dt>
-              <dd>
-                <h3>
-                  <a href="#">무비차트</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">아트하우스</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">ICECON</a>
-                </h3>
-              </dd>
-            </dl>
-            <dl class="nav_overMenu" id="navoverMenu">
-              <dt>
-                <h2>
-                  <a href="#" tabindex="-1">극장</a>
-                </h2>
-              </dt>
-              <dd>
-                <h3>
-                  <a href="#">CGV 극장</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">특별관</a>
-                </h3>
-              </dd>
-            </dl>
-            <dl class="nav_overMenu" id="navoverMenu">
-              <dt>
-                <h2>
-                  <a href="#" tabindex="-1">예매</a>
-                </h2>
-              </dt>
-              <dd>
-                <h3>
-                  <a href="#">빠른예매</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">상영스케줄</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">English Ticketing</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">English Schedule</a>
-                </h3>
-              </dd>
-            </dl>
-            <dl class="nav_overMenu" id="navoverMenu">
-              <dt>
-                <h2>
-                  <a href="#" tabindex="-1">스토어</a>
-                </h2>
-              </dt>
-              <dd>
-                <h3>
-                  <a href="#">영화관람권</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">기프트카드</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">콤보</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">팝콘</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">음료</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">스낵</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">플레이존</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#" class="arrowR" target="_blank">씨네샵 ></a>
-                </h3>
-              </dd>
-            </dl>
-            <dl class="nav_overMenu" id="navoverMenu">
-              <dt>
-                <h2>
-                  <a href="#" tabindex="-1">이벤트</a>
-                </h2>
-              </dt>
-              <dd>
-                <h3>
-                  <a href="#">SPECIAL</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">영화/예매</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">멤버십/CLUB</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">CGV 극장별</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">제휴할인</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">당첨자 발표</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">종료된 이벤트</a>
-                </h3>
-              </dd>
-            </dl>
-            <dl class="nav_overMenu" id="navoverMenu">
-              <dt>
-                <h2>
-                  <a href="#" tabindex="-1">혜택</a>
-                </h2>
-              </dt>
-              <dd>
-                <h3>
-                  <a href="#">CGV 할인정보</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">CLUB 서비스</a>
-                </h3>
-              </dd>
-              <dd>
-                <h3>
-                  <a href="#">VIP 라운지</a>
-                </h3>
-              </dd>
-            </dl>
-          </div>
         </div>
         <!-- 서브 메뉴 E -->
       </div>
       <!-- 헤더 부분 E -->
-    </header>
     <!-- 메인 S -->
-    <main>
+    <div class="contaniner">
       <!-- 메인 비디오 S -->
       <script>
         window.addEventListener("DOMContentLoaded", function() {
@@ -1474,40 +1485,88 @@
               <!-- <div class="swiper-pagination"></div> -->
             </div>
           </div>
-          <script>
-            var swiper = new Swiper(".mySwiper", {
-              slidesPerView: 5,
-              spaceBetween: 30,
-              slidesPerGroup: 5,
-              loop: false,
-              loopFillGroupWithBlank: true,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-              navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              },
-            });
-          </script>
         </div>
       </div>
-      <!-- 무비 차트 E -->
-      <!-- 이벤트 S -->
       <script>
         window.addEventListener("DOMContentLoaded", function() {
+
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            slidesPerGroup: 5,
+            loop: false,
+            loopFillGroupWithBlank: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+          var swiper1 = new Swiper(".first", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: false,
+            loopFillGroupWithBlank: true,
+            autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+          var swiper2 = new Swiper(".second", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            slidesPerGroup: 1,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+          });
+          const stop = document.querySelector(".btn_playstop");
+          stop.addEventListener("click", function() {
+            if(stop.classList.contains("active")) {
+              stop.classList.remove("active");
+              swiper2.autoplay.stop();
+            } else {
+              stop.classList.add("active");
+              swiper2.autoplay.start();
+            }
+          })
           const play = document.getElementById("play_stop");
           play.addEventListener("click", function() {
             const clLsit = play.classList;
             if(clLsit.contains("active")) {
               clLsit.remove("active");
+              swiper1.autoplay.stop();
             } else {
               clLsit.add("active");
+              swiper1.autoplay.start();
             }
           });
         });
       </script>
+      <!-- 무비 차트 E -->
+      <!-- 이벤트 S -->
       <div class="event_warp">
         <div class="event_contents">
           <div class="event_title_wrap">
@@ -1515,10 +1574,393 @@
             <a href="#none" class="btn_allView">전체보기</a>
             <a href="#none" id="play_stop" class="play_stop active">playStop</a>
           </div>
+          <div class="event_list">
+            <div class="swiper mySwiper first">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34804/16576736191670.jpg" alt="씨지밤 VIP 인센티브">
+                    </div>
+                    <strong>씨지밤 VIP 인센티브</strong>
+                    <span>2022.07.13~2022.08.31</span>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34844/16570831118770.jpg" alt="[엘비스]CGV 필름마크">
+                    </div>
+                    <strong>[엘비스]CGV 필름마크</strong>
+                    <span>2022.07.06~2022.07.31</span>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34889/16576988925950.jpg" alt="[외계+인] 1부 필름마크">
+                    </div>
+                    <strong>[외계+인] 1부 필름마크</strong>
+                    <span>2022.07.13~2022.08.07</span>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34888/16576988380790.jpg" alt="[미니언즈2]필름마크">
+                    </div>
+                    <strong>[미니언즈2]필름마크</strong>
+                    <span>2022.07.13~2022.08.07</span>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34934/16582934110940.jpg" alt="[한산: 용의 출현]필름마크">
+                    </div>
+                    <strong>[한산: 용의 출현]필름마크</strong>
+                    <span>2022.07.20~2022.08.14</span>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34986/16588981676960.jpg" alt="[비상선언]필름마크">
+                    </div>
+                    <strong>[비상선언]필름마크</strong>
+                    <span>2022.07.27~2022.08.21</span>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34988/16589071509350.jpg" alt="[한산:용의출현]4DX 리미티드 포스터">
+                    </div>
+                    <strong>[한산:용의출현]4DX 리미티드 포스터</strong>
+                    <span>2022.07.27~2022.08.16</span>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 이벤트 E -->
-    </main>
+      <!-- 특별관 S -->
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          const list1 = document.getElementById("special_list1");
+          const list2 = document.getElementById("special_list2");
+          const list3 = document.getElementById("special_list3");
+          const list4 = document.getElementById("special_list4");
+
+          list1.addEventListener("mouseenter", list1Fn);
+          list2.addEventListener("mouseenter", list2Fn);
+          list3.addEventListener("mouseenter", list3Fn);
+          list4.addEventListener("mouseenter", list4Fn);
+
+        });
+        function list1Fn() {
+          const list = document.getElementById("special_list1");
+          list.classList.add("active");
+          const chImg = document.getElementById("special_img");
+          chImg.setAttribute("src", "css/img/s1.png");
+          chImg.setAttribute("alt", "SUITE CINEMA");
+          const list2 = document.getElementById("special_list2");
+          const list3 = document.getElementById("special_list3");
+          const list4 = document.getElementById("special_list4");
+          list2.classList.remove("active");
+          list3.classList.remove("active");
+          list4.classList.remove("active");
+        }
+        function list2Fn() {
+          const list = document.getElementById("special_list2");
+          list.classList.add("active");
+          const chImg = document.getElementById("special_img");
+          chImg.setAttribute("src", "css/img/s2.png");
+          chImg.setAttribute("alt", "CINE & LIVINGROOM");
+          const list1 = document.getElementById("special_list1");
+          const list3 = document.getElementById("special_list3");
+          const list4 = document.getElementById("special_list4");
+          list1.classList.remove("active");
+          list3.classList.remove("active");
+          list4.classList.remove("active");
+        }
+        function list3Fn() {
+          const list = document.getElementById("special_list3");
+          list.classList.add("active");
+          const chImg = document.getElementById("special_img");
+          chImg.setAttribute("src", "css/img/s3.png");
+          chImg.setAttribute("alt", "4DX");
+          const list1 = document.getElementById("special_list1");
+          const list2 = document.getElementById("special_list2");
+          const list4 = document.getElementById("special_list4");
+          list1.classList.remove("active");
+          list2.classList.remove("active");
+          list4.classList.remove("active");
+        }
+        function list4Fn() {
+          const list = document.getElementById("special_list4");
+          list.classList.add("active");
+          const chImg = document.getElementById("special_img");
+          chImg.setAttribute("src", "css/img/s4.png");
+          chImg.setAttribute("alt", "CINE de CHEF");
+          const list2 = document.getElementById("special_list2");
+          const list3 = document.getElementById("special_list3");
+          const list1 = document.getElementById("special_list1");
+          list2.classList.remove("active");
+          list3.classList.remove("active");
+          list1.classList.remove("active");
+        }
+      </script>
+      <div class="specialHall_wrap">
+        <div class="contents">
+          <div class="speicalHall_title_wrap">
+            <h3>특별관</h3>
+            <a href="#none" class="btn_allView">전체보기</a>
+          </div>
+          <div class="specialHall_content">
+            <a href="#none">
+              <div class="img_wrap">
+                <img src="css/img/s1.png" id="special_img" alt="SUITE CINEMA">
+              </div>
+            </a>
+            <ul class="specialHall_list">
+              <li id="special_list1" class="active">
+                <a href="#none">
+                  <strong>SUITE CINEMA</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span>#호텔 컨셉의 프리미엄관</span>
+                  </div>
+                </a>
+              </li>
+              <li id="special_list2" class="">
+                <a href="#none">
+                  <strong>CINE & LIVINGROOM</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span>#신개념 소셜 상영관</span>
+                  </div>
+                </a>
+              </li>
+              <li id="special_list3" class="">
+                <a href="#none">
+                  <strong>4DX</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span>#모션시트 #오감체험</span>
+                  </div>
+                </a>
+              </li>
+              <li id="special_list4" class="">
+                <a href="#none">
+                  <strong>CINE de CHEF</strong>
+                  <div class="specialHall_hashTag_wrap">
+                    <span>#쉐프가 있는 영화관</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- 특별관 E -->
+      <!-- 기프티콘 S -->
+      <div class="giftcon_wrap">
+        <div class="contents">
+          <ul class="giftcon_list_wrap">
+            <li>
+              <dl class="giftcon_list">
+                <dt>
+                  영화관람권
+                  <a href="#none" alt="영화관람권" class="btn_more">더보기</a>
+                </dt>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16094706927780.jpg" alt="CGV 영화관람권">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>CGV 영화관람권</span>
+                      <strong>12,000원</strong>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15458911951520.jpg" alt="CGV 골드클래스">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>CGV 골드클래스</span>
+                      <strong>40,000원</strong>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16105061088530.jpg" alt="4DX 관람권">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>4DX 관람권</span>
+                      <strong>19,000원</strong>
+                    </div>
+                  </a>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="giftcon_list">
+                <dt>
+                  기프트카드
+                  <a href="#none" alt="기프트카드" class="btn_more">더보기</a>
+                </dt>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814124358590.jpg" alt="PACONNIE A형">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>PACONNIE A형</span>
+                      <strong>금액충전형</strong>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814158039890.jpg" alt="PACONNIE B형">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>PACONNIE B형</span>
+                      <strong>금액충전형</strong>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814162227570.jpg" alt="PACONNIE C형">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>PACONNIE C형</span>
+                      <strong>금액충전형</strong>
+                    </div>
+                  </a>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="giftcon_list">
+                <dt>
+                  콤보
+                  <a href="#none" alt="콤보" class="btn_more">더보기</a>
+                </dt>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15463252009160.jpg" alt="CGV콤보">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>CGV콤보</span>
+                      <strong>9,000원</strong>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15463251537260.jpg" alt="더블콤보">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>더블콤보</span>
+                      <strong>12,000원</strong>
+                    </div>
+                  </a>
+                </dd>
+                <dd>
+                  <a href="#none">
+                    <div class="img_wrap">
+                      <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15464065561050.jpg" alt="스몰세트">
+                    </div>
+                    <div class="giftcon_info_wrap">
+                      <span>스몰세트</span>
+                      <strong>6,500원</strong>
+                    </div>
+                  </a>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 기프티콘 E -->
+      <!-- 공지사항 & 고객센터 S -->
+      <div class="noticeClient_wrap">
+        <div class="contents">
+          <div class="noticeClient_container">
+            <div class="noticeClient_content">
+              <div class="notice_wrap">
+                <strong>공지사항</strong>
+                <a href="#none" class="btn_link">[기타]22년 VIP 선정 기준 변경 및 추가 기준 관련 안내</a>
+                <a href="#none" class="btn_more">더보기</a>
+              </div>
+              <div class="client_wrap">
+                <dl class="client_list">
+                  <dt>
+                    <strong>고객센터</strong>
+                  </dt>
+                  <dd>
+                    <strong>1544-1122</strong>
+                    <span>고객센터 운영시간 (평일 09:00~18:00)</span>
+                    <br>
+                    <p>업무시간 외 자동응답 안내 가능합니다.</p>
+                  </dd>
+                </dl>
+                <div class="client_btn_wrap">
+                  <a href="#none">FAQ</a>
+                  <a href="#none">1:1 문의</a>
+                  <a href="#none">대관/단체 문의</a>
+                </div>
+              </div>
+            </div>
+            <div class="qr_wrap">
+              <strong>앱 다운로드</strong>
+              <span>CGV앱에서 더 편리하게 이용하세요</span>
+              <div class="img_wrap">
+                <img src="https://img.cgv.co.kr/R2014/images/common/img_qrcode.gif" alt="QR CODE">
+              </div>
+              <p>
+                QR코드를 스캔하고
+                <br>
+                앱설치 페이지로 바로 이동하세요
+              </p>
+            </div>
+          </div>
+          <div class="noticeClient_banner_wrap">
+            <div class="banner_swiper">
+              <div class="swiper mySwiper second">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#none">
+                      <img src="https://img.cgv.co.kr/Front/Main/2021/1227/16405823683780.png" alt="카카오페이카드">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#none">
+                      <img src="https://adimg.cgv.co.kr/images/202111/cgvgift/1221_226x259.jpg" alt="광고-CGV 기프트 카드">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#none" class="btn_playstop">playStop</a>
+          </div>
+        </div>
+      </div>
+      <!-- 공지사항 & 고객센터 E -->
+    </div>
     <!-- 메인 E -->
   </div>
 </body>
