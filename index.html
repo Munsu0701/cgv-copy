@@ -85,11 +85,14 @@
           };
           function menu_fixed() {
             const menu = document.getElementById("nav");
+            const fixedBtn = document.querySelector(".fixedBtn_wrap");
             const top_menu = menu.getBoundingClientRect();
             if(window.pageYOffset > top_menu.bottom) {
               menu.classList.add("fixed");
+              fixedBtn.classList.add("topBtn");
             } else {
               menu.classList.remove("fixed");
+              fixedBtn.classList.remove("topBtn");
             }
 
           }
@@ -1960,9 +1963,167 @@
         </div>
       </div>
       <!-- 공지사항 & 고객센터 E -->
+      <!-- 예매하기 및 TOP S -->
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          const top = document.querySelector(".btn_gotoTop");
+          top.addEventListener("click", function() {
+            window.scrollTo(0,0);
+          })
+        });
+      </script>
+      <div class="fixedBtn_wrap">
+        <a href="#none" class="btn_ticketing">예매하기</a>
+        <a href="#none" class="btn_gotoTop">
+          <img src="https://img.cgv.co.kr/R2014/images/common/btn/gotoTop.png" alt="최상단으로 이동">
+        </a>
+      </div>
+      <!-- 예매하기 및 TOP E -->
     </div>
     <!-- 메인 E -->
   </div>
+  <!-- 푸터 S -->
+  <footer>
+    <!-- 광고 배너 S -->
+    <div class="banner_wrap">
+      <div class="contents">
+        <a href="#none">
+          <img src="https://adimg.cgv.co.kr/images/202111/cgvgift/0119_980x240.png">
+        </a>
+      </div>
+    </div>
+    <!-- 광고 배너 E -->
+    <!-- 푸터 메뉴 S -->
+    <ul class="policy_list">
+      <li>
+        <a href="#none">
+          회사소개
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          IR
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          채용정보
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          광고/제휴/출점문의
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          이용약관
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          편성기준
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          <strong>개인정보처리방침</strong>
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          법적고지
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          이메일주소무단수집거부
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          윤리경영
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          사이버감사실
+        </a>
+      </li>
+    </ul>
+    <!-- 푸터 메뉴 E -->
+    <!-- 회사 정보 S -->
+    <article class="company_info_wrap">
+      <section class="company_info">
+        <address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address>
+        <dl class="company_info_list">
+          <dt>
+            대표이사
+          </dt>
+          <dd>허민희</dd>
+          <dt>
+            사업자등록번호
+          </dt>
+          <dd>104-81-45690</dd>
+          <dt>
+            통신판매업신고번호
+          </dt>
+          <dd>
+            2017-서울용산-0662
+            <a href="#none">사업자정보확인</a>
+          </dd>
+        </dl>
+        <dl class="company_info_list">
+          <dt>
+            호스팅사업자
+          </dt>
+          <dd>CJ올리브네트웍스</dd>
+          <dt>
+            개인정보보호 책임자
+          </dt>
+          <dd>심준범</dd>
+          <dt>
+            대표이메일
+          </dt>
+          <dd>
+            cjcgvmaster@cj.net
+          </dd>
+        </dl>
+        <p class="copyright">@ CJ CGV. All Rights Reserved</p>
+      </section>
+      <section class="familysite_wrap">
+        <label for="familysite">CJ그룹 계열사 바로가기</label>
+        <select id="familysite">
+          <option value>계열사 바로가기</option>
+          <optgroup label="CJ그룹">
+            <option>CJ주식회사</option>
+          </optgroup>
+          <optgroup label="식품 & 식품서비스">
+            <option>CJ푸드빌</option>
+            <option>CJ프레시웨이</option>
+          </optgroup>
+          <optgroup label="생명공학">
+            <option>CJ제일제당 BIO사업부문</option>
+            <option>CJ Feed%Card</option>
+          </optgroup>
+          <optgroup label="물류 & 신유통">
+            <option>CJ대한통운</option>
+            <option>CJ대한통운 건설부문</option>
+            <option>CJ올리브영</option>
+            <option>CJ올리브네트웍스</option>
+            <option>CJ ENM 커머스부문</option>
+          </optgroup>
+          <optgroup label="엔터테인먼트 & 미디어">
+            <option>CJ ENM 엔터테인먼트부문</option>
+            <option>CJ CGV</option>
+          </optgroup>
+        </select>
+        <a href="#none" class="btn_familysite">GO</a>
+      </section>
+    </article>
+    <!-- 회사 정보 E -->
+  </footer>
+  <!-- 푸터 E -->
 </body>
 
 </html>
